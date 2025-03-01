@@ -1,0 +1,104 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 355 100% 100%;
+
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 224 76% 48%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-github-green/20 selection:text-github-light;
+  }
+  
+  body {
+    @apply bg-github-dark text-github-light antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/5 border border-white/10;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-[1.02];
+  }
+  
+  .button-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(35,134,54,0.5)] hover:bg-github-green-hover;
+  }
+  
+  .section-border {
+    @apply border border-github-accent rounded-md overflow-hidden;
+  }
+  
+  .typing-animation {
+    @apply overflow-hidden whitespace-nowrap border-r-2 border-github-green animate-typing;
+  }
+  
+  .feature-card {
+    @apply bg-github-accent rounded-lg p-6 transition-all duration-300 hover:shadow-[0_5px_15px_rgba(35,134,54,0.3)] hover:translate-y-[-5px];
+  }
+  
+  .link-hover {
+    @apply relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-github-green after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+}
+
+#root {
+  @apply w-full max-w-none p-0 m-0;
+}
+
+.logo {
+  @apply transition-all duration-300;
+}
+
+.logo:hover {
+  @apply brightness-125 drop-shadow-[0_0_10px_rgba(35,134,54,0.5)];
+}
